@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LankaStay Payment | Secure Booking</title>
+    <meta
+      name="description"
+      content="Complete your LankaStay booking payment securely and instantly."
+    />
+    <meta property="og:title" content="LankaStay Payment | Secure Booking" />
+    <meta
+      property="og:description"
+      content="Complete your LankaStay booking payment securely and instantly."
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="stylesheet"
+      href="../../../stylesheet/components/bookingV2.scss"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: hsl(222, 15%, 20%);
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body class="bg-neutral text-neutral-foreground font-sans antialiased">
+    <!-- Header -->
+    <header class="header">
+      <div class="container mx-auto px-8">
+        <div class="flex justify-center">
+          <h1 class="text-3xl font-heading font-bold text-primary">
+            <a href="/"> LankaStay </a>
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Indicator -->
+    <section class="bg-neutral-50 py-12" id="progress-section">
+      <div class="container mx-auto px-8 max-w-4xl">
+        <div
+          class="flex items-center justify-between relative"
+          role="progressbar"
+          aria-valuenow="3"
+          aria-valuemin="1"
+          aria-valuemax="3"
+        >
+          <!-- Step 1 - Completed -->
+          <div class="flex flex-col items-center flex-1 relative z-10">
+            <div
+              class="w-12 h-12 rounded-full bg-success flex items-center justify-center text-neutral-50 font-semibold transition-transform duration-200 hover:scale-105"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <span class="mt-2 text-sm font-medium text-neutral-700"
+              >Details</span
+            >
+          </div>
+
+          <!-- Connector Line 1 -->
+          <div class="flex-1 h-1 bg-success mx-2 -mt-6"></div>
+
+          <!-- Step 2 - Completed -->
+          <div class="flex flex-col items-center flex-1 relative z-10">
+            <div
+              class="w-12 h-12 rounded-full bg-success flex items-center justify-center text-neutral-50 font-semibold transition-transform duration-200 hover:scale-105"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <span class="mt-2 text-sm font-medium text-neutral-700"
+              >Review</span
+            >
+          </div>
+
+          <!-- Connector Line 2 -->
+          <div class="flex-1 h-1 bg-neutral-300 mx-2 -mt-6"></div>
+
+          <!-- Step 3 - Active -->
+          <div class="flex flex-col items-center flex-1 relative z-10">
+            <div
+              class="w-12 h-12 rounded-full border-4 border-primary bg-neutral-50 flex items-center justify-center text-primary font-bold"
+              aria-current="step"
+            >
+              3
+            </div>
+            <span class="mt-2 text-sm font-medium text-primary">Payment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Payment Area -->
+    <main class="py-16 px-8" id="payment-section">
+      <div class="container mx-auto max-w-6xl">
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-heading font-bold text-hero-text mb-3">
+            Payment
+          </h2>
+          <p class="text-neutral-600 text-lg">
+            Kindly follow the instructions below
+          </p>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Left Column: Booking Summary -->
+          <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+            <h3
+              class="text-2xl font-heading font-semibold text-neutral-900 mb-6"
+            >
+              Booking Details
+            </h3>
+
+            <div class="space-y-6">
+              <!-- Hotel Image -->
+              <div class="rounded-lg overflow-hidden">
+                <img
+                  src="https://c.animaapp.com/mina3j0qnHkiYU/img/ai_3.png"
+                  alt="hotel exterior"
+                  class="w-full h-48 object-cover"
+                  loading="lazy"
+                  width="1400"
+                  height="900"
+                />
+              </div>
+
+              <!-- Destination & Duration -->
+              <div>
+                <h4 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Destination
+                </h4>
+                <p class="text-neutral-700">Colombo Beach Resort</p>
+                <p class="text-neutral-600 text-sm mt-1">5 nights, 6 days</p>
+              </div>
+
+              <!-- Location -->
+              <div>
+                <h4 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Location
+                </h4>
+                <p class="text-neutral-700">
+                  123 Galle Road, Colombo 03, Sri Lanka
+                </p>
+              </div>
+
+              <!-- Pricing Details -->
+              <div class="border-t border-neutral-300 pt-6">
+                <div class="flex justify-between mb-3">
+                  <span class="text-neutral-700">Room Rate (5 nights)</span>
+                  <span class="text-neutral-800 font-medium">$750.00</span>
+                </div>
+                <div class="flex justify-between mb-3">
+                  <span class="text-neutral-700">Service Fee</span>
+                  <span class="text-neutral-800 font-medium">$50.00</span>
+                </div>
+                <div class="flex justify-between mb-3">
+                  <span class="text-neutral-700">Taxes</span>
+                  <span class="text-neutral-800 font-medium">$80.00</span>
+                </div>
+                <div
+                  class="flex justify-between text-xl font-bold border-t border-neutral-300 pt-4 mt-4"
+                >
+                  <span class="text-neutral-900">Total Price</span>
+                  <span class="text-primary">$880.00</span>
+                </div>
+                <div
+                  class="flex justify-between text-lg font-semibold mt-4 bg-neutral-100 p-4 rounded"
+                >
+                  <span class="text-neutral-800">Initial Payment</span>
+                  <span class="text-secondary">$440.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Payment Form -->
+          <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+            <h3
+              class="text-2xl font-heading font-semibold text-neutral-900 mb-6"
+            >
+              Payment Information
+            </h3>
+
+            <!-- Payment Illustration -->
+            <div class="mb-8 rounded-lg overflow-hidden">
+              <img
+                src="https://c.animaapp.com/mina3j0qnHkiYU/img/ai_1.png"
+                alt="payment illustration"
+                class="w-full h-32 object-cover"
+                loading="lazy"
+                width="1200"
+                height="800"
+              />
+            </div>
+
+            <form class="space-y-6" id="payment-form">
+              <!-- Card Number -->
+              <div>
+                <label
+                  for="card-number"
+                  class="block text-sm font-semibold text-neutral-800 mb-2"
+                  >Card Number</label
+                >
+                <input
+                  type="text"
+                  id="card-number"
+                  name="card-number"
+                  placeholder="1234 5678 9012 3456"
+                  required=""
+                  class="w-full px-4 py-3 border border-neutral-300 rounded bg-neutral-50 text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
+                  maxlength="19"
+                />
+              </div>
+              <!-- Cardholder Name -->
+              <div>
+                <label
+                  for="cardholder"
+                  class="block text-sm font-semibold text-neutral-800 mb-2"
+                  >Cardholder Name</label
+                >
+                <input
+                  type="text"
+                  id="cardholder"
+                  name="cardholder"
+                  placeholder="John Doe"
+                  required=""
+                  class="w-full px-4 py-3 border border-neutral-300 rounded bg-neutral-50 text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
+                />
+              </div>
+
+              <!-- Expiry Date & CVV -->
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="expiry"
+                    class="block text-sm font-semibold text-neutral-800 mb-2"
+                    >Expiry Date</label
+                  >
+                  <input
+                    type="text"
+                    id="expiry"
+                    name="expiry"
+                    placeholder="MM/YY"
+                    required=""
+                    class="w-full px-4 py-3 border border-neutral-300 rounded bg-neutral-50 text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
+                    maxlength="5"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="cvv"
+                    class="block text-sm font-semibold text-neutral-800 mb-2"
+                    >CVV</label
+                  >
+                  <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    placeholder="123"
+                    required=""
+                    class="w-full px-4 py-3 border border-neutral-300 rounded bg-neutral-50 text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
+                    maxlength="4"
+                  />
+                </div>
+              </div>
+
+              <!-- Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                <button
+                  type="submit"
+                  class="flex-1 px-6 py-3 bg-primary text-primary-foreground font-normal text-base rounded transition-all duration-200 hover:bg-secondary hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  <a href="../booking/confirm.html"> Pay Now </a>
+                </button>
+                <a
+                  href="../booking/select.html"
+                  class="flex-1 px-6 py-3 bg-neutral-200 text-neutral-600 font-normal text-base rounded text-center block transition-all duration-200 hover:bg-neutral-300"
+                >
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container mx-auto px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-neutral-600 text-sm">
+            © 2024 LankaStay. All rights reserved.
+          </p>
+          <div class="flex gap-6">
+            <a href="#privacy" class="footer-link">Privacy Policy</a>
+            <a href="#terms" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Reservation",
+        "reservationFor": {
+          "@type": "LodgingBusiness",
+          "name": "Colombo Beach Resort",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Galle Road",
+            "addressLocality": "Colombo",
+            "addressRegion": "Western Province",
+            "postalCode": "00300",
+            "addressCountry": "LK"
+          }
+        },
+        "reservationStatus": "https://schema.org/ReservationPending",
+        "totalPrice": "880.00",
+        "priceCurrency": "USD"
+      }
+    </script>
+
+    <!-- GSAP Animations -->
+    <script src="../../../js/card_ngan_hang/nganhang.js"></script>
+  </body>
+</html>

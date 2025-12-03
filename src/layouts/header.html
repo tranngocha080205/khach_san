@@ -1,0 +1,136 @@
+<header
+  id="header"
+  class="header-sticky fixed top-0 left-0 right-0 z-50 bg-transparent"
+>
+  <nav
+    class="container mx-auto px-6 lg:px-12 py-5 lg:py-6 flex items-center justify-between"
+    aria-label="Main navigation"
+  >
+    <div class="flex items-center">
+      <a
+        href="../pages/index.html"
+        class="text-2xl font-bold text-primary focus-outline"
+        aria-label="LankaStay home"
+        >LankaStay</a
+      >
+    </div>
+
+    <!-- Desktop Navigation -->
+    <ul class="hidden lg:flex items-center space-x-8">
+      <li>
+        <a
+          href="../pages/index.html"
+          class="nav-link active text-navbar-text focus-outline"
+          aria-current="page"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="#hotels" class="nav-link text-navbar-text focus-outline"
+          >Hotels</a
+        >
+      </li>
+      <li>
+        <a href="#rooms" class="nav-link text-navbar-text focus-outline"
+          >Rooms</a
+        >
+      </li>
+      <li>
+        <a href="#about" class="nav-link text-navbar-text focus-outline"
+          >About</a
+        >
+      </li>
+      <li>
+        <a href="#contact" class="nav-link text-navbar-text focus-outline"
+          >Contact</a
+        >
+      </li>
+    </ul>
+
+    <div class="hidden lg:block">
+      <a
+        href="../Components/auth/auth.html"
+        class="btn-transition bg-primary text-primary-foreground px-6 py-3 rounded font-normal focus-outline hover:bg-secondary"
+        aria-label="Login to your account"
+        >Login</a
+      >
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden text-navbar-text focus-outline p-2"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden bg-neutral border-t border-gray-200"
+  >
+    <ul class="container mx-auto px-6 py-6 space-y-4">
+      <li>
+        <a
+          href="#home"
+          class="block nav-link active text-navbar-text py-3 focus-outline"
+          aria-current="page"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#hotels"
+          class="block nav-link text-navbar-text py-3 focus-outline"
+          >Hotels</a
+        >
+      </li>
+      <li>
+        <a
+          href="#rooms"
+          class="block nav-link text-navbar-text py-3 focus-outline"
+          >Rooms</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="block nav-link text-navbar-text py-3 focus-outline"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="block nav-link text-navbar-text py-3 focus-outline"
+          >Contact</a
+        >
+      </li>
+      <li class="pt-4">
+        <a
+          href="../Components/auth/auth.html"
+          class="block btn-transition bg-primary text-primary-foreground px-6 py-3 rounded text-center font-normal focus-outline hover:bg-secondary"
+          aria-label="Login to your account"
+          >Login</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../stylesheet/main.scss" />
+    <link rel="stylesheet" href="../../stylesheet/index.scss" />
+    <title>Book Blue Origin Fams | LankaStay</title>
+    <meta
+      name="description"
+      content="Experience luxury at Blue Origin Fams - a stunning waterfront villa with modern amenities, breathtaking views, and world-class comfort. Book your stay today."
+    />
+
+    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind Configuration -->
+
+    <!-- Google Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body,
+      html {
+        color: hsl(222, 15%, 25%);
+      }
+
+      .booking-card-animate {
+        animation: slideInRight 0.6s ease-out;
+      }
+
+      .fade-up {
+        animation: fadeUp 0.8s ease-out;
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .btn-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 hsla(222, 89%, 56%, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 0 8px hsla(222, 89%, 56%, 0);
+        }
+      }
+    </style>
+
+  </head>
+  <body class="bg-neutral-50 text-neutral-foreground">
+    <!-- Header Navigation -->
+  <include src="./layouts/header.html"></include>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Breadcrumb Section -->
+  <include src="./Components/page-blue-fams/breadcrumb.html"></include>
+      <!-- Hero Section -->
+  <include src="./Components/page-blue-fams/Hero-Gallery.html"></include>
+      <!-- About Section -->
+<include src="./Components/page-blue-fams/about.html"></include>
+      <!-- Amenities Section -->
+<include src="./Components/page-blue-fams/amenities.html"></include>
+      <!-- Near by Attractions Section -->
+<include src="./Components/page-blue-fams/NearbyAttractions.html"></include>
+    </main>
+<include src="./Components/page-blue-fams/map.html"></include>
+    <!-- Footer -->
+    <include src="./layouts/footer.html"></include>
+
+    <!-- Mobile Menu Toggle Script -->
+
+  </body>
+   <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuBtn.getAttribute("aria-expanded") === "true";
+        mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Header scroll effect
+      const header = document.getElementById("header");
+      let lastScroll = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Active navigation link based on scroll position
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Save search preferences to localStorage
+      const searchForm = document.querySelector('form[role="search"]');
+      if (searchForm) {
+        searchForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const checkDate = document.getElementById("check-date").value;
+          const personCount = document.getElementById("person-count").value;
+          const location = document.getElementById("location").value;
+
+          localStorage.setItem(
+            "lastSearch",
+            JSON.stringify({
+              checkDate,
+              personCount,
+              location,
+            }),
+          );
+
+          alert("Search saved! Results would be displayed here.");
+        });
+
+        // Load last search from localStorage
+        const lastSearch = localStorage.getItem("lastSearch");
+        if (lastSearch) {
+          const search = JSON.parse(lastSearch);
+          if (search.checkDate)
+            document.getElementById("check-date").value = search.checkDate;
+          if (search.personCount)
+            document.getElementById("person-count").value = search.personCount;
+          if (search.location)
+            document.getElementById("location").value = search.location;
+        }
+      }
+    </script>
+    <script type="module" src="../../js/index.js"></script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Blue Origin Fams",
+        "description": "Nestled on the serene shores of a pristine lake, Blue Origin Fams offers an unparalleled escape into luxury and tranquility.",
+        "image": "https://c.animaapp.com/min5pot4OweX8n/img/user_1.png",
+        "priceRange": "$200 per day",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "LK"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Bedrooms",
+            "value": "3"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Bathrooms",
+            "value": "2"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Wi-Fi",
+            "value": "100 Mbps"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Parking",
+            "value": "2 spots"
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Private Pool",
+            "value": "1"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>

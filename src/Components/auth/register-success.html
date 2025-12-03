@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Created Successfully | LankaStay</title>
+    <meta
+      name="description"
+      content="Your LankaStay account has been successfully created. Book your dream resort stay now."
+    />
+
+    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind Configuration -->
+
+    <!-- Google Fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Nunito+Sans:wght@400;600;700&display=swap");
+
+      html,
+      body {
+        color: hsl(218, 20%, 20%);
+      }
+    </style>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Account Created Successfully",
+        "description": "Your LankaStay account has been successfully created. Book your dream resort stay now.",
+        "url": "https://lankastay.com/account-success"
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="../../../stylesheet/components/Successfull.scss"
+    />
+  </head>
+  <body
+    class="min-h-screen overflow-x-hidden font-sans text-neutral-foreground"
+  >
+    <!-- Background Hero Layer -->
+    <div class="fixed inset-0 z-0 bg-hero-background" id="hero-bg">
+      <img
+        src="../../asset/images/pickeds/ai7.png"
+        alt="resort landscape background"
+        class="w-full h-full object-cover opacity-0"
+        id="bg-image"
+        loading="eager"
+        width="1440"
+        height="735"
+      />
+    </div>
+
+    <!-- Main Content Container -->
+    <main
+      class="relative z-10 min-h-screen flex items-center justify-center px-4 py-12"
+    >
+      <!-- Confirmation Box -->
+      <div
+        class="w-full max-w-[600px] bg-white/70 backdrop-blur-md rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center gap-6 opacity-0 scale-95"
+        id="confirmation-box"
+      >
+        <!-- Logo Text -->
+        <div class="text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-primary">LankaStay</h2>
+        </div>
+
+        <!-- Success Icon -->
+        <div class="flex items-center justify-center">
+          <svg
+            class="w-16 h-16 md:w-20 md:h-20 text-success"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Headline -->
+        <h1
+          class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-hero-text"
+        >
+          Account Created Successfull
+        </h1>
+
+        <!-- Subtext -->
+        <p class="text-base md:text-lg text-center text-gray-600 font-body">
+          Please Check Your Email
+        </p>
+
+        <!-- Primary CTA Button -->
+        <a
+          href="/"
+          class="inline-block mt-4 bg-primary text-primary-foreground px-8 py-3 rounded-md font-normal text-base transition-colors duration-300 ease-in-out hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary w-full max-w-xs text-center"
+          aria-label="Proceed to booking"
+        >
+          Book Now
+        </a>
+      </div>
+    </main>
+
+    <!-- Animation Script -->
+    <script>
+      // Wait for DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Background fade-in animation
+        gsap.to("#bg-image", {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+
+        // Confirmation box scale and fade-in animation
+        gsap.to("#confirmation-box", {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          delay: 0.3,
+          ease: "power2.out",
+        });
+      });
+    </script>
+    <script type="module" src="../../../js/index.js"></script>
+  </body>
+</html>

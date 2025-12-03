@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap");
+body,
+html {
+  color: hsl(222, 20%, 20%);
+}
+
+.card-hover {
+  transition: transform 200ms ease-in;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+}
+
+.nav-link {
+  transition: color 200ms ease-in;
+}
+
+.nav-link:hover {
+  color: hsl(223, 87%, 55%);
+}
+
+.nav-link.active {
+  color: hsl(223, 87%, 55%);
+  font-weight: 600;
+}
+
+.btn-transition {
+  transition: all 200ms ease-in;
+}
+
+.focus-outline:focus {
+  outline: 2px solid hsl(193, 80%, 58%);
+  outline-offset: 2px;
+}
+
+.header-sticky {
+  transition:
+    background-color 300ms ease-in,
+    padding 300ms ease-in;
+}
+
+.header-sticky.scrolled {
+  background-color: hsla(0, 0%, 100%, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px hsla(220, 10%, 20%, 0.1);
+}

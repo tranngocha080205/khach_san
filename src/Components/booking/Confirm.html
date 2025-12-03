@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Completed | LankaStay</title>
+    <meta
+      name="description"
+      content="Your LankaStay booking payment has been completed successfully."
+    />
+    <link
+      rel="stylesheet"
+      href="../../../stylesheet/components/bookingV2.scss"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body class="bg-neutral text-neutral-foreground font-sans antialiased">
+    <!-- Header -->
+    <header class="header">
+      <div class="container mx-auto px-8">
+        <div class="flex justify-center">
+          <a href="/">
+            <h1 class="text-3xl font-heading font-bold text-primary">
+              LankaStay
+            </h1>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Success Content -->
+    <main class="py-16 px-8">
+      <section class="bg-neutral-50 py-12" id="progress-section">
+        <div class="container mx-auto px-8 max-w-4xl">
+          <div
+            class="flex items-center justify-between relative"
+            role="progressbar"
+            aria-valuenow="3"
+            aria-valuemin="1"
+            aria-valuemax="3"
+          >
+            <!-- Step 1 - Completed -->
+            <div class="flex flex-col items-center flex-1 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-success flex items-center justify-center text-neutral-50 font-semibold transition-transform duration-200 hover:scale-105"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <span class="mt-2 text-sm font-medium text-neutral-700"
+                >Details</span
+              >
+            </div>
+
+            <!-- Connector Line 1 -->
+            <div class="flex-1 h-1 bg-success mx-2 -mt-6"></div>
+
+            <!-- Step 2 - Completed -->
+            <div class="flex flex-col items-center flex-1 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-success flex items-center justify-center text-neutral-50 font-semibold transition-transform duration-200 hover:scale-105"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <span class="mt-2 text-sm font-medium text-neutral-700"
+                >Review</span
+              >
+            </div>
+
+            <!-- Connector Line 2 -->
+            <div class="flex-1 h-1 bg-success mx-2 -mt-6"></div>
+
+            <!-- Step 3 - Active -->
+
+            <div class="flex flex-col items-center flex-1 relative z-10">
+              <div
+                class="w-12 h-12 rounded-full bg-success flex items-center justify-center text-neutral-50 font-semibold transition-transform duration-200 hover:scale-105"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+              </div>
+              <span class="mt-2 text-sm font-medium text-neutral-700"
+                >Confirm</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container mx-auto max-w-2xl">
+        <!-- Success Checkmarks -->
+        <div class="flex justify-center gap-6 mb-12" id="checkmarks">
+          <div class="checkmark-circle">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <div class="checkmark-circle">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+          <div class="checkmark-circle">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Success Title -->
+        <div class="text-center mb-16">
+          <h2 class="text-5xl font-heading font-bold text-hero-text mb-4">
+            Yay! Payment Completed
+          </h2>
+        </div>
+
+        <!-- Success Illustration -->
+        <div class="flex justify-center mb-12" id="illustration">
+          <div class="relative w-full max-w-md">
+            <svg viewBox="0 0 400 300" class="w-full h-auto">
+              <!-- Background Circle -->
+              <circle cx="200" cy="150" r="140" fill="#f0f4f8" opacity="0.5" />
+
+              <!-- Calendar/Document -->
+              <rect
+                x="140"
+                y="80"
+                width="120"
+                height="140"
+                rx="8"
+                fill="#cbd5e1"
+              />
+              <rect
+                x="140"
+                y="80"
+                width="120"
+                height="30"
+                rx="8"
+                fill="#94a3b8"
+              />
+              <line
+                x1="155"
+                y1="130"
+                x2="215"
+                y2="130"
+                stroke="#94a3b8"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+              <line
+                x1="155"
+                y1="145"
+                x2="245"
+                y2="145"
+                stroke="#94a3b8"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+
+              <!-- Content Boxes -->
+              <rect
+                x="155"
+                y="165"
+                width="55"
+                height="40"
+                rx="4"
+                fill="#94a3b8"
+              />
+              <rect
+                x="220"
+                y="165"
+                width="55"
+                height="30"
+                rx="4"
+                fill="#94a3b8"
+              />
+              <rect
+                x="155"
+                y="180"
+                width="55"
+                height="25"
+                rx="4"
+                fill="#94a3b8"
+              />
+              <rect
+                x="220"
+                y="185"
+                width="35"
+                height="20"
+                rx="4"
+                fill="#94a3b8"
+              />
+
+              <!-- User Avatar -->
+              <circle cx="100" cy="160" r="25" fill="#3b82f6" />
+              <circle cx="100" cy="155" r="8" fill="white" />
+              <path d="M 85 175 Q 100 165 115 175" fill="white" />
+
+              <!-- User Info Lines -->
+              <line
+                x1="85"
+                y1="195"
+                x2="115"
+                y2="195"
+                stroke="#cbd5e1"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <line
+                x1="90"
+                y1="205"
+                x2="110"
+                y2="205"
+                stroke="#cbd5e1"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+
+              <!-- Success Checkmark (Large) -->
+              <circle cx="280" cy="190" r="28" fill="#10b981" />
+              <path
+                d="M 268 190 L 276 198 L 292 182"
+                stroke="white"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- Success Message -->
+        <div class="text-center mb-12">
+          <p class="text-lg text-primary mb-2">
+            Please check your email & phone Message.
+          </p>
+          <p class="text-lg text-primary">We have sent all the Information</p>
+        </div>
+
+        <!-- Dashboard Button -->
+        <div class="text-center">
+          <a
+            href="../dashbroad/dashbroah.html"
+            class="btn-secondary"
+            style="opacity: 100"
+          >
+            Go to Dashboard
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container mx-auto px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-neutral-600 text-sm">
+            © 2024 LankaStay. All rights reserved.
+          </p>
+          <div class="flex gap-6">
+            <a href="#privacy" class="footer-link">Privacy Policy</a>
+            <a href="#terms" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+      // Page fade-in
+      gsap.from("body", {
+        opacity: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+
+      // Checkmarks animation
+      gsap.from("#checkmarks > div", {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        delay: 0.3,
+      });
+
+      // Title animation
+      gsap.from("h2", {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.8,
+      });
+
+      // Illustration animation
+      gsap.from("#illustration", {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        ease: "back.out(1.2)",
+        delay: 1.2,
+      });
+
+      // Message animation
+      gsap.from("#illustration + div", {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "power2.out",
+        delay: 1.6,
+      });
+
+      // Button animation
+      gsap.from(".btn-secondary", {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: "power2.out",
+        delay: 1.9,
+      });
+    </script>
+  </body>
+</html>

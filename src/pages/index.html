@@ -1,0 +1,93 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LankaStay – Book Your Perfect Sri Lankan Vacation Resort</title>
+    <meta
+      name="description"
+      content="Discover and book your perfect Sri Lankan vacation resort with LankaStay. Browse luxury accommodations, overwater bungalows, and seaside villas for your next memorable holiday."
+    />
+    <link rel="stylesheet" href="../../stylesheet/main.scss" />
+  </head>
+  <body class="bg-neutral text-neutral-foreground">
+    <!-- Header -->
+    <include src="./layouts/header.html"></include>
+    <!-- Hero Section -->
+    <include src="./Components/home/hero.html"></include>
+    <!-- Search Bar Section -->
+    <include src="./Components/home/seacherBar.html"></include>
+    <!-- Most Picked Section -->
+    <include src="./Components/home/mostPicked.html"></include>
+    <!-- Hotels Section -->
+    <include src="./Components/home/mostPicked2.html"></include>
+    <!-- About Section -->
+    <include src="./Components/home/about.html"></include>
+    <!-- Contact Section -->
+    <include src="./Components/home/contact.html"></include>
+    <!-- Footer -->
+    <include src="./layouts/footer.html"></include>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuBtn.getAttribute("aria-expanded") === "true";
+        mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Header scroll effect
+      const header = document.getElementById("header");
+      let lastScroll = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Active navigation link based on scroll position
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+    <script src="../../js/seacher/search.js"></script>
+    <script type="module" src="../../js/index.js"></script>
+  </body>
+</html>

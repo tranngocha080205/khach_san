@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LankaStay | Hotel Registration &amp; User Sign Up</title>
+    <meta
+      name="description"
+      content="Join LankaStay and register your hotel or personal account to manage bookings effortlessly."
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LankaStay",
+        "url": "https://lankastay.com",
+        "description": "Hotel registration and booking management platform"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Hotel Registration",
+        "provider": {
+          "@type": "Organization",
+          "name": "LankaStay"
+        },
+        "description": "Register your hotel with LankaStay to manage bookings effortlessly"
+      }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+
+    <!-- Tailwind Configuration -->
+
+    <!-- Google Fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap");
+
+      html,
+      body {
+        color: hsl(231, 18%, 16%);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="../../../stylesheet/components/register.scss"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-50 to-tertiary text-neutral-foreground font-sans font-body antialiased"
+  >
+    <!-- Header -->
+    <header class="pt-16 pb-8 px-6 md:px-16">
+      <div class="max-w-7xl mx-auto">
+        <h1
+          class="text-4xl md:text-5xl font-headline font-semibold text-hero-text leading-headline tracking-headline bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+        >
+          <a href="/"> LankaStay</a>
+        </h1>
+        <p class="mt-2 text-base text-gray-600 font-body">
+          Register your stay with us
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-6 md:px-16 pb-16">
+      <div class="max-w-7xl mx-auto">
+        <!-- Two Column Form Container -->
+        <div class="flex flex-col md:flex-row gap-8 md:gap-8">
+          <!-- Left Column: User Registration -->
+          <section
+            class="flex-1 bg-white rounded-xl border border-gray-200 p-8 md:p-12 shadow-sm"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-headline font-semibold text-hero-text leading-headline mb-8"
+            >
+              Create Your Account
+            </h2>
+
+            <form class="space-y-6" id="userForm">
+              <!-- Name -->
+              <div>
+                <label
+                  for="userName"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="userName"
+                  name="userName"
+                  placeholder="Enter your full name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="userEmail"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="userEmail"
+                  name="userEmail"
+                  placeholder="your.email@example.com"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label
+                  for="userPhone"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Phone</label
+                >
+                <input
+                  type="tel"
+                  id="userPhone"
+                  name="userPhone"
+                  placeholder="+94 XX XXX XXXX"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Country -->
+              <div>
+                <label
+                  for="userCountry"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Country</label
+                >
+                <input
+                  type="text"
+                  id="userCountry"
+                  name="userCountry"
+                  placeholder="Sri Lanka"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- NIC -->
+              <div>
+                <label
+                  for="userNIC"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >NIC (National ID)</label
+                >
+                <input
+                  type="text"
+                  id="userNIC"
+                  name="userNIC"
+                  placeholder="XXXXXXXXXX"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Username -->
+              <div>
+                <label
+                  for="username"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Choose a username"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Password -->
+              <div>
+                <label
+                  for="userPassword"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Password</label
+                >
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="userPassword"
+                    name="userPassword"
+                    placeholder="Create a secure password"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                    required=""
+                    aria-required="true"
+                  />
+                  <button
+                    type="button"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary rounded p-1"
+                    onclick="togglePassword('userPassword', this)"
+                    aria-label="Toggle password visibility"
+                  >
+                    <span class="text-sm">Show</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right Column: Hotel Registration -->
+          <section
+            class="flex-1 bg-white rounded-xl border border-gray-200 p-8 md:p-12 shadow-sm"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-headline font-semibold text-hero-text leading-headline mb-8"
+            >
+              Register Your Hotel
+            </h2>
+
+            <form class="space-y-6" id="hotelForm">
+              <!-- Hotel Name -->
+              <div>
+                <label
+                  for="hotelName"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Hotel Name</label
+                >
+                <input
+                  type="text"
+                  id="hotelName"
+                  name="hotelName"
+                  placeholder="Enter hotel name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Registration Number -->
+              <div>
+                <label
+                  for="regNumber"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Registration Number</label
+                >
+                <input
+                  type="text"
+                  id="regNumber"
+                  name="regNumber"
+                  placeholder="Hotel registration number"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Address -->
+              <div>
+                <label
+                  for="hotelAddress"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Address</label
+                >
+                <input
+                  type="text"
+                  id="hotelAddress"
+                  name="hotelAddress"
+                  placeholder="Full hotel address"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  required=""
+                  aria-required="true"
+                />
+              </div>
+
+              <!-- Image Upload -->
+              <div>
+                <label
+                  for="hotelImages"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Hotel Images (Max 3)</label
+                >
+                <input
+                  type="file"
+                  id="hotelImages"
+                  name="hotelImages"
+                  accept="image/*"
+                  multiple=""
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-primary file:text-primary-foreground hover:file:bg-primary-hover file:cursor-pointer cursor-pointer focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  aria-label="Upload hotel images, maximum 3 files"
+                />
+                <p class="mt-2 text-xs text-gray-500">
+                  Upload up to 3 images (JPG, PNG)
+                </p>
+              </div>
+
+              <!-- Document Upload -->
+              <div>
+                <label
+                  for="hotelDocuments"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Registration Documents</label
+                >
+                <input
+                  type="file"
+                  id="hotelDocuments"
+                  name="hotelDocuments"
+                  accept=".pdf,.doc,.docx"
+                  multiple=""
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-primary file:text-primary-foreground hover:file:bg-primary-hover file:cursor-pointer cursor-pointer focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200"
+                  aria-label="Upload registration documents"
+                />
+                <p class="mt-2 text-xs text-gray-500">
+                  Upload registration documents (PDF, DOC)
+                </p>
+              </div>
+
+              <!-- Facilities Description -->
+              <div>
+                <label
+                  for="facilities"
+                  class="block text-sm font-label text-gray-700 mb-2"
+                  >Facilities Description</label
+                >
+                <textarea
+                  id="facilities"
+                  name="facilities"
+                  rows="5"
+                  placeholder="Describe your hotel facilities and amenities..."
+                  class="w-full px-4 py-3 border border-gray-300 rounded-xl text-neutral-foreground bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none"
+                  required=""
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4">
+                <button
+                  type="submit"
+                  class="w-full px-6 py-4 bg-primary text-primary-foreground font-normal text-base rounded-xl hover:bg-primary-hover transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                >
+                  Register
+                </button>
+
+                <!-- Login Link -->
+                <div class="mt-4 text-center">
+                  <a
+                    href="#login"
+                    class="text-sm text-primary hover:text-primary-hover underline transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary rounded"
+                  >
+                    Already have an account? Login
+                  </a>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <!-- Image Assets Section -->
+        <section class="mt-24">
+          <h2
+            class="text-3xl font-headline font-semibold text-hero-text leading-headline text-center mb-12"
+          >
+            Why Choose LankaStay
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Asset 1 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
+            >
+              <img
+                src="https://c.animaapp.com/mipenqsmIlLO8q/img/ai_1.png"
+                alt="modern workspace"
+                width="1200"
+                height="800"
+                loading="lazy"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3
+                  class="text-xl font-headline font-semibold text-hero-text mb-2"
+                >
+                  Modern Workspace
+                </h3>
+                <p class="text-gray-600 leading-body">
+                  Experience seamless hotel management with our intuitive
+                  platform designed for modern hospitality.
+                </p>
+              </div>
+            </div>
+
+            <!-- Asset 2 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
+            >
+              <img
+                src="https://c.animaapp.com/mipenqsmIlLO8q/img/ai_2.png"
+                alt="hotel reception desk"
+                width="1200"
+                height="800"
+                loading="lazy"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3
+                  class="text-xl font-headline font-semibold text-hero-text mb-2"
+                >
+                  Professional Service
+                </h3>
+                <p class="text-gray-600 leading-body">
+                  Deliver exceptional guest experiences with our comprehensive
+                  booking and management tools.
+                </p>
+              </div>
+            </div>
+
+            <!-- Asset 3 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm"
+            >
+              <img
+                src="https://c.animaapp.com/mipenqsmIlLO8q/img/ai_3.png"
+                alt="person typing registration form"
+                width="1000"
+                height="700"
+                loading="lazy"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3
+                  class="text-xl font-headline font-semibold text-hero-text mb-2"
+                >
+                  Easy Registration
+                </h3>
+                <p class="text-gray-600 leading-body">
+                  Get started quickly with our streamlined registration process
+                  and start managing bookings today.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 md:px-16">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-sm text-gray-500 text-center">© LankaStay 2024</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Password visibility toggle
+      function togglePassword(inputId, button) {
+        const input = document.getElementById(inputId);
+        const span = button.querySelector("span");
+
+        if (input.type === "password") {
+          input.type = "text";
+          span.textContent = "Hide";
+        } else {
+          input.type = "password";
+          span.textContent = "Show";
+        }
+      }
+
+      // Form submission handlers
+      document
+        .getElementById("userForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          console.log("User form submitted");
+          // Add form validation and submission logic here
+        });
+
+      document
+        .getElementById("hotelForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          console.log("Hotel form submitted");
+          // Add form validation and submission logic here
+        });
+
+      // File upload validation
+      document
+        .getElementById("hotelImages")
+        .addEventListener("change", function (e) {
+          if (e.target.files.length > 3) {
+            alert("Maximum 3 images allowed");
+            e.target.value = "";
+          }
+        });
+
+      // Smooth entrance animation
+      window.addEventListener("load", function () {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section, index) => {
+          section.style.opacity = "0";
+          section.style.transform = "translateY(20px)";
+          section.style.transition =
+            "opacity 0.6s ease-out, transform 0.6s ease-out";
+
+          setTimeout(() => {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+          }, index * 80);
+        });
+      });
+    </script>
+  </body>
+</html>
